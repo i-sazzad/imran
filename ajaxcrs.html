@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+function f()
+{
+   
+   var a= new XMLHttpRequest();
+   a.onreadystatechange = function()
+  {
+    if (a.readyState==4 && a.status==200)
+    {
+          document.write(a.responseText);
+   }
+  }
+	var c=document.f1.nm.value;
+	a.open("GET","a.php?x="+c,true);
+	a.send();
+}
+
+
+
+</script>
+</head>
+
+
+<body>
+
+<form name= "f1">
+
+<input type="text" name="nm">
+<input type="submit" value="Click" onclick="f()">
+
+</body>
+
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Info from PHP file</title>
+</head>
+<body>
+<button onclick="info()">Check</button>
+<p id="test"></p>
+<script>
+function info()
+{
+var a=new XMLHttpRequest();
+a.onreadystatechange=function()
+{
+if(a.readyState==4 && a.status==200)
+info2(a);
+}
+a.open("GET", "info.php", true);
+a.send();
+}
+function info2(x)
+{
+var y = x.responseText;
+//document.write(y);
+document.getElementById("test").innerHTML=x.responseText;
+}
+</script>
+</body>
+</html>
